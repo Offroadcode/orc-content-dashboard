@@ -1,11 +1,11 @@
 angular.module("umbraco.resources").factory("orcContentDashboardApiResource", function ($http, $q) {
 
-    var olympicOldContentApiResource = {};
+    var orcContentDashboardApiResource = {};
 
     // Content API Calls //////////////////////////////////////////////////
 
     orcContentDashboardApiResource.getOldCOntent = function() {
-        return $http.get('/umbraco/backoffice/api/LastUpdatedDashboard/GetAllOldContent').then(function (response) {
+        return $http.get('/umbraco/backoffice/api/ContentDashboard/GetAllOldContent').then(function (response) {
             var responseData = response.data;
             if (typeof responseData === 'string') {
                 responseData = JSON.parse(responseData);
@@ -22,7 +22,7 @@ angular.module("umbraco.resources").factory("orcContentDashboardApiResource", fu
     return orcContentDashboardApiResource;
 });
 
-angular.module("umbraco").controller("orc.content.dashboard.controller", function ($scope, olympicOldContentApiResource) {
+angular.module("umbraco").controller("orc.content.dashboard.controller", function ($scope, orcContentDashboardApiResource) {
 
     // Initialization Methods //////////////////////////////////////////////////
 

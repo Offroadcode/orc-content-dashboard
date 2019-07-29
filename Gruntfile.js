@@ -15,7 +15,7 @@ module.exports = function(grunt) {
         atBegin: true
       },
       dll: {
-        files: ['ContentDashboard/OrcContentDashboard/**/*.cs'] ,
+        files: ['ContentDashboard/OrcContentDashboard/bin/debug/*.dll'] ,
         tasks: [/*'msbuild:dist',*/ 'copy:dll']
       },
       js: {
@@ -48,14 +48,14 @@ module.exports = function(grunt) {
         src: [
             'ContentDashboard/controllers/orc.content.dashboard.controller.js'
         ],
-        dest: '<%= basePath %>/js/ContentDashboard.js'
+        dest: '<%= basePath %>/js/orc.content.dashboard.js'
       }
     },
 
     copy: {
         dll: {
             cwd: 'ContentDashboard/OrcContentDashboard/bin/debug/',
-            src: 'ContentDashboard.dll',
+            src: 'OrcContentDashboard.dll',
             dest: '<%= dest %>/bin/',
             expand: true
         },
@@ -73,7 +73,7 @@ module.exports = function(grunt) {
 		css: {
 			cwd: 'ContentDashboard/css/',
 			src: [
-				'ContentDashboard.css'
+				'style.css'
 			],
 			dest: '<%= basePath %>/css/',
 			expand: true,
@@ -131,13 +131,13 @@ module.exports = function(grunt) {
 				style: 'compressed'
 			},
 			files: {
-				'ContentDashboard/css/ContentDashboard.css': 'ContentDashboard/sass/style.scss'
+				'ContentDashboard/css/style.css': 'ContentDashboard/sass/style.scss'
 			}
 		}
 	},
 
   clean: {
-      build: '<%= grunt.config("basePath").substring(0, 4) == "dist" ? "dist/**/*" : "null" %>',
+      // build: '<%= grunt.config("basePath").substring(0, 4) == "dist" ? "dist/**/*" : "null" %>',
       tmp: ['tmp'],
       html: [
         'ContentDashboard/views/*.html',
@@ -148,8 +148,9 @@ module.exports = function(grunt) {
         '!ContentDashboard/controllers/orc.content.dashboard.controller.js'
       ],
       css: [
-        'ContentDashboard/css/*.css',
-        '!ContentDashboard/css/style.css'
+        'ContentDashboard/css/*',
+        '!ContentDashboard/css/style.css',
+        '!ContentDashboard/css/style.css.map'
       ],
 	  sass: [
       'ContentDashboard/sass/*.scss',

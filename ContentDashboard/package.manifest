@@ -1,8 +1,8 @@
 {
   "css": [
-    "/app_plugins/OlympicOldContentDashboard/style.css"
+    "/app_plugins/OrcContentDashboard/css/style.css"
   ],
   "javascript": [
-    "/app_plugins/OlympicOldContentDashboard/js/olympic.old.content.dashboard.js"
+    "/app_plugins/OrcContentDashboard/js/orc.content.dashboard.js"
   ]
 }

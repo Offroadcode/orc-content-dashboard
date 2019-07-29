@@ -4,14 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http.Results;
-using System.Web.Mvc;
 using Umbraco.Web.WebApi;
 
 namespace OrcContentDashboard.Controllers.Api
 {
     public class ContentDashboardController : UmbracoAuthorizedApiController
     {
-        [HttpGet]
         public JsonResult<List<ContentSnapshot>> GetAllOldContent(int monthsBack = 6)
         {
             var oldContent = new List<ContentSnapshot>();

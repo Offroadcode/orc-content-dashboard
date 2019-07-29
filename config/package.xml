@@ -26,7 +26,22 @@
   <Languages />
   <DataTypes />
   <control />
-  <Actions />
+  <Actions>
+        <Action 
+            runat="install" 
+            alias="addDashboardSection"
+            dashboardAlias="ORC.Content.Dashboard"
+        >
+            <section>
+                <areas>
+                    <area>content</area>
+                </areas>
+                <tab caption="Old Content">
+                    <control>/App_Plugins/OrcContentDashboard/views/dashboard.html</control>
+                </tab>
+            </section>
+        </Action>
+    </Actions>
   <files>
   	<% files.forEach(function(file) { %>
   	<file>
