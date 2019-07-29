@@ -1,0 +1,8 @@
+{
+  "css": [
+    "/app_plugins/OlympicOldContentDashboard/style.css"
+  ],
+  "javascript": [
+    "/app_plugins/OlympicOldContentDashboard/js/olympic.old.content.dashboard.js"
+  ]
+}

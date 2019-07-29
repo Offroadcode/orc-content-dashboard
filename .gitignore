@@ -1,0 +1,10 @@
+dist/
+node_modules/
+tmp/
+pkg/
+Umbraco.Test/
+.sass-cache/
+ContentDashboard/OrcContentDashboard/packages/
+ContentDashboard/OrcContentDashboard/bin/
+ContentDashboard/OrcContentDashboard/obj/
+ContentDashboard/OrcContentDashboard/.vs/

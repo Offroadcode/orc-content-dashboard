@@ -1,0 +1,31 @@
+<div id="orcContentDashboard" class="orc-dashboards" ng-controller="orc.content.dashboard.controller">
+
+    <div class="olympic-inner-area">
+        <h3>Old Content Dashboard</h3>
+        <p>Welcome to the old content dashboard. This section displays all content that has not been updated in the past <b>6 months</b>.</p>
+    </div>
+
+    <div class="olympic-inner-area">  
+        <table class="table table-striped" ng-show="oldContent.length">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Last Saved On</th>
+                    <th>Created On</th>
+                    <th>Last Edited By</th>
+                    <th>Controls</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="page in oldContent">
+                    <td class="name">{{page.name}}</td>
+                    <td>{{page.updateDate}}</td>
+                    <td>{{page.createDate}}</td>
+                    <td>{{page.lastEditor}}</td>
+                    <td class="small"><a href="{{page.url}}" target="_blank">view</a> | <a href="{{page.adminUrl}}">edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
